@@ -1,7 +1,7 @@
 // Store our API endpoint inside queryUrl
 var queryUrl = "http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=" +
-  "2014-01-02&maxlongitude=-69.52148437&minlongitude=-123.83789062&maxlatitude=48.74894534&minlatitude=25.16517337";
-
+"2014-01-02&maxlongitude=-69.52148437&minlongitude=-123.83789062&maxlatitude=48.74894534&minlatitude=25.16517337";
+ 
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
   createFeatures(data.features);
@@ -10,22 +10,52 @@ d3.json(queryUrl, function(data) {
 function createFeatures(earthquakeData) {
 
     var mag_one ={
-        radius: 2
+        radius: 4,
+        fillColor: "red",
+        fillOpacity: .15,
+        color: "red",
+        opacity: .15,
+        weight: 1
     };
     var mag_two ={
-        radius: 5
+        radius: 10,
+        fillColor: "red",
+        fillOpacity: .3,
+        color: "red",
+        opacity: .3,
+        weight: 1
     };
     var mag_three ={
-        radius: 8
+        radius: 16,
+        fillColor: "red",
+        fillOpacity: .5,
+        color: "red",
+        opacity: .5,
+        weight: 1
     };
     var mag_four ={
-        radius: 11
+        radius: 22,
+        fillColor: "red",
+        fillOpacity: .65,
+        color: "red",
+        opacity: .65,
+        weight: 1
     };
     var mag_five ={
-        radius: 14
+        radius: 28,
+        fillColor: "red",
+        fillOpacity: .8,
+        color: "red",
+        opacity: .8,
+        weight: 1
     };
     var super_mag ={
-        radius: 17
+        radius: 34,
+        fillColor: "red",
+        fillOpacity: 1,
+        color: "red",
+        opacity: 1,
+        weight: 1
     };
 
   var earthquakes = L.geoJSON(earthquakeData, {
